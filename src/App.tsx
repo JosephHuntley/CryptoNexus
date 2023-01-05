@@ -23,10 +23,7 @@ function App() {
 								path='/'
 								element={<Homepage />}
 							/>
-							<Route
-								path='/exchanges'
-								element={<Exchanges />}
-							/>
+
 							<Route
 								path='/cryptocurrencies'
 								element={<Cryptocurrencies />}
@@ -54,7 +51,6 @@ function App() {
 					</Typography.Title>
 					<Space>
 						<Link to='/'>Home</Link>
-						<Link to='/exchanges'>Exchanges</Link>
 						<Link to='/news'>News</Link>
 					</Space>
 				</div>

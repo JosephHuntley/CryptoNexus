@@ -25,7 +25,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
 	const { coinId } = useParams();
-	const [timeperiod, setTimeperiod] = useState('7d');
+	const [timeperiod, setTimeperiod] = useState('24h');
 	const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
 	const { data: coinHistory } = useGetCryptoHistoryQuery({
 		coinId,
@@ -44,11 +44,13 @@ const CryptoDetails = () => {
 			icon: <DollarCircleOutlined />,
 		},
 		{ title: 'Rank', value: cryptoDetails?.rank, icon: <NumberOutlined /> },
-		// {
-		// 	title: '24h Volume',
-		// 	value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
-		// 	icon: <ThunderboltOutlined />,
-		// },
+		{
+			title: '24h Volume',
+			value: `$ ${
+				cryptoDetails?.['24hVolume'] && millify(cryptoDetails?.['24hVolume'])
+			}`,
+			icon: <ThunderboltOutlined />,
+		},
 		{
 			title: 'Market Cap',
 			value: `$ ${
@@ -117,7 +119,7 @@ const CryptoDetails = () => {
 				</p>
 			</Col>
 			<Select
-				defaultValue='7d'
+				defaultValue='3h'
 				className='select-timeperiod'
 				placeholder='Select Timeperiod'
 				onChange={(value) => setTimeperiod(value)}>
