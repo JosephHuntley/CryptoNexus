@@ -43,8 +43,8 @@ const News = ({ simplified = false }: props) => {
 						placeholder='Select a Crypto'
 						optionFilterProp='children'
 						onChange={(value) => setNewsCategory(value)}
-						filterOption={(input, option) =>
-							option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+						filterOption={(input, option: any) =>
+							(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
 						}>
 						<Option value='Cryptocurrency'>Cryptocurrency</Option>
 						{data?.data?.coins.map((coin: any) => (

@@ -49,17 +49,17 @@ const LineChart = ({ coinHistory, currentPrice, coinName }: any) => {
 		],
 	};
 
-	const options = {
-		scales: {
-			yAxes: [
-				{
-					ticks: {
-						beginAtZero: true,
-					},
-				},
-			],
-		},
-	};
+	// const options = {
+	// 	scales: {
+	// 		yAxes: [
+	// 			{
+	// 				ticks: {
+	// 					beginAtZero: true,
+	// 				},
+	// 			},
+	// 		],
+	// 	},
+	// };
 
 	return (
 		<>
@@ -84,7 +84,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }: any) => {
 			</Row>
 			<Line
 				data={data}
-				options={options}
+				// options={options}
 			/>
 		</>
 	);
