@@ -42,7 +42,7 @@ const Navbar = () => {
 				<Typography.Title
 					level={3}
 					className='logo'>
-					<Link to='/'>Cryptoverse</Link>
+					<Link to='/'>CryptoNexus</Link>
 				</Typography.Title>
 				<Button
 					className='menu-control-container'
